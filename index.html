@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kudzai Nigel Jeche - Full Stack Developer & Digital Consultant</title>
+    <meta name="description" content="Full Stack Developer and Digital Business Consultant specializing in Laravel, Vue.js, and digital transformation solutions.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="code-animation">
+                <span>&lt;</span>
+                <span>Nigel</span>
+                <span>/&gt;</span>
+            </div>
+            <div class="loading-text">Initializing Portfolio...</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home" class="logo-link">
+                    <span class="logo-text">&lt;Nigel/&gt;</span>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                    <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
+        
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <div class="hero-greeting">
+                    <span class="greeting-text">Hello, I'm</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Kudzai Nigel</span>
+                    <span class="title-line">Jeche</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <span class="typewriter" id="typewriter"></span>
+                    <span class="cursor">|</span>
+                </div>
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="300">
+                    Building Tomorrow's Digital Solutions Today. Full Stack Developer and Digital Transformation Expert with 7+ years of experience creating innovative solutions for organizations across Africa and Europe.
+                </p>
+                <div class="hero-buttons" data-aos="fade-up" data-aos-delay="500">
+                    <a href="#portfolio" class="btn btn-primary">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <span>Let's Talk</span>
+                        <i class="fas fa-comments"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-image" data-aos="fade-left" data-aos-delay="600">
+                <div class="image-container">
+                    <div class="code-overlay">
+                        <div class="code-line"><span class="keyword">const</span> <span class="variable">developer</span> = {</div>
+                        <div class="code-line">  <span class="property">name</span>: <span class="string">'Kudzai Nigel'</span>,</div>
+                        <div class="code-line">  <span class="property">skills</span>: [<span class="string">'Laravel'</span>, <span class="string">'Vue.js'</span>],</div>
+                        <div class="code-line">  <span class="property">experience</span>: <span class="number">7</span>,</div>
+                        <div class="code-line">  <span class="property">passion</span>: <span class="string">'Innovation'</span></div>
+                        <div class="code-line">};</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span class="scroll-text">Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Get to know</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <div class="about-intro">
+                        <h3>I'm a passionate Full Stack Developer and Digital Transformation Expert</h3>
+                        <p>Based in Harare, Zimbabwe, I've been on a mission since 2018 to revolutionize how businesses leverage technology to achieve their goals. As the founder and CEO of Leading Digital, I specialize in crafting bespoke digital solutions that drive real business value.</p>
+                    </div>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>7+ Years Experience</h4>
+                                <p>Professional software development across multiple industries</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>50+ Projects Delivered</h4>
+                                <p>Successfully completed projects for healthcare, government, and private sectors</p>
+                            </div>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>Leading Digital Founder</h4>
+                                <p>Built a successful digital transformation company from the ground up</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-skills" data-aos="fade-left">
+                    <h3>Technical Expertise</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Frontend</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">Vue.js</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">HTML5/CSS3</span>
+                                <span class="skill-tag">Tailwind CSS</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Backend</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">Laravel</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">RESTful APIs</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h4>Tools & DevOps</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">Linux</span>
+                                <span class="skill-tag">VMware</span>
+                                <span class="skill-tag">Server Management</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section section-dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">What I offer</span>
+                <h2 class="section-title">Services</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Custom Software Development</h3>
+                    <p>Building tailor-made software solutions that perfectly align with your business needs, from enterprise systems to mobile applications.</p>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Web Development & Design</h3>
+                    <p>Creating stunning, responsive websites that not only look great but perform exceptionally with modern technologies.</p>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>E-Commerce Solutions</h3>
+                    <p>Developing secure, scalable online stores with integrated payment systems that enhance customer experience.</p>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Digital Business Consultancy</h3>
+                    <p>Strategic guidance to navigate your digital transformation journey and optimize your business operations.</p>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>System Analysis & Integration</h3>
+                    <p>Comprehensive analysis of existing systems and seamless integration of new solutions for optimal workflow.</p>
+                </div>
+                
+                <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Database Design & Management</h3>
+                    <p>Robust database solutions that handle your data efficiently with proper design, optimization, and security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">My work</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            
+            <div class="portfolio-filter" data-aos="fade-up" data-aos-delay="200">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                <button class="filter-btn" data-filter="government">Government</button>
+                <button class="filter-btn" data-filter="fintech">FinTech</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item healthcare" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" data-project="ehpcz">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>EHPCZ Management System</h3>
+                            <p>Comprehensive management information system for Zimbabwe's Environmental Health Practitioners Council.</p>
+                            <div class="project-features">
+                                <span>Practitioner Registration</span>
+                                <span>CPD Tracking</span>
+                                <span>Payment Processing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item government" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" data-project="cybersafe">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>CyberSafe Ministry App</h3>
+                            <p>Mobile application for the Ministry of ICT to enhance cybersecurity awareness among citizens.</p>
+                            <div class="project-features">
+                                <span>Mobile App</span>
+                                <span>Backend Analytics</span>
+                                <span>Real-time Monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item fintech" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" data-project="eshagi">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Payment APIs</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>E-SHAGI Credit Platform</h3>
+                            <p>Comprehensive credit management platform providing accessible financial solutions.</p>
+                            <div class="project-features">
+                                <span>Credit Management</span>
+                                <span>Mobile Interface</span>
+                                <span>Payment Integration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item healthcare" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" data-project="resource-africa">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">PHP/Laravel</span>
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">Mobile App</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Resource Africa Platform</h3>
+                            <p>Wildlife management system supporting sustainable natural resource management in rural communities.</p>
+                            <div class="project-features">
+                                <span>Wildlife Management</span>
+                                <span>Community Platform</span>
+                                <span>Conservation Tools</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item education" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" data-project="smartstudent">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">Vue.js</span>
+                                <span class="tech-tag">Education</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>SmartStudent Portal</h3>
+                            <p>Integrated school management system improving educational administration and student engagement.</p>
+                            <div class="project-features">
+                                <span>Student Management</span>
+                                <span>Academic Tracking</span>
+                                <span>Parent Portal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item government" data-aos="fade-up" data-aos-delay="600">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" class="project-link" data-project="sentinel">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">Laravel</span>
+                                <span class="tech-tag">Analytics</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Sentinel Fraud Detection</h3>
+                            <p>AI-powered fraud detection system for agricultural subsidy programs protecting government investments.</p>
+                            <div class="project-features">
+                                <span>Fraud Detection</span>
+                                <span>AI Analytics</span>
+                                <span>Real-time Monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section section-dark">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Get in touch</span>
+                <h2 class="section-title">Let's Build Something Amazing Together</h2>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <div class="contact-intro">
+                        <h3>Ready to Transform Your Business?</h3>
+                        <p>I'm here to help turn your vision into reality with cutting-edge digital solutions. Let's discuss your project and see how we can drive your business forward.</p>
+                    </div>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>Email</h4>
+                                <a href="mailto:jechekudzie@gmail.com">jechekudzie@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>Phone</h4>
+                                <a href="tel:+263774685884">+263 774 685 884</a>
+                                <a href="tel:+263718887994">+263 718 887 994</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-content">
+                                <h4>Location</h4>
+                                <span>97 Baines Avenue, CBD<br>Harare, Zimbabwe</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form" data-aos="fade-left">
+                    <form id="contact-form" class="form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Your Email</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" id="subject" name="subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div class="footer-logo">
+                        <span class="logo-text">&lt;Nigel/&gt;</span>
+                    </div>
+                    <p>Building Tomorrow's Digital Solutions Today</p>
+                </div>
+                
+                <div class="footer-right">
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#portfolio">Portfolio</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kudzai Nigel Jeche. All rights reserved.</p>
+                <p><strong>Leading Digital</strong> - Pioneering Sustainable Innovation</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

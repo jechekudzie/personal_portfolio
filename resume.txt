@@ -1,0 +1,160 @@
+KUDZAI NIGEL JECHE
+Full Stack Developer | Digital Business Consultant | Tech Entrepreneur
+
+CONTACT INFORMATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Address: 97 Baines Avenue, CBD, Harare, Zimbabwe
+Phone: +263 774 685 884 / +263 718 887 994
+Email: jechekudzie@gmail.com
+LinkedIn: linkedin.com/in/kudzai-nigel-jeche
+Portfolio: www.kudzainigeljeche.com
+
+PROFESSIONAL SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Dynamic and innovative Full Stack Developer with 7+ years of experience in designing, developing, and deploying cutting-edge web applications and digital solutions. Founder and CEO of Leading Digital, a pioneering software development company in Zimbabwe. Proven track record of delivering 50+ successful projects for healthcare, government, and private sector clients across Africa and Europe. Expert in modern web technologies with a passion for digital transformation and sustainable innovation.
+
+CORE COMPETENCIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Full Stack Development        • Digital Transformation      • System Architecture
+• Database Design & Management  • E-commerce Solutions       • Mobile App Development
+• IT Consultancy               • Project Management         • Team Leadership
+• DevOps & Server Management   • Cybersecurity Awareness    • Business Analysis
+
+TECHNICAL SKILLS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Frontend Technologies:
+• JavaScript (ES6+), Vue.js, React, jQuery
+• HTML5, CSS3, Bootstrap, Tailwind CSS
+• Responsive Design, Progressive Web Apps
+• UI/UX Best Practices
+
+Backend Technologies:
+• PHP, Laravel, Livewire
+• RESTful API Development
+• MySQL, Database Design & Optimization
+• Server-Side Architecture
+
+DevOps & Tools:
+• Git Version Control
+• Docker Containerization
+• Linux/Windows Server Administration
+• DNS Management & Hosting
+• VMware Virtualization
+
+Additional Technologies:
+• Node.js
+• WordPress Development
+• Payment Gateway Integration
+• 3CX Phone Systems
+• IT Support & Maintenance
+
+PROFESSIONAL EXPERIENCE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FOUNDER & CEO | LEAD FULL STACK DEVELOPER
+Leading Digital | Harare, Zimbabwe | 2018 - Present
+
+• Founded and grew a successful software development company from inception to 50+ completed projects
+• Lead a team of 10+ developers, designers, and consultants in delivering enterprise-level solutions
+• Architected and developed custom software systems for major clients including government ministries, healthcare councils, and international organizations
+• Established strategic partnerships with international firms for cybersecurity and digital marketing services
+• Achieved 95% client retention rate through exceptional service delivery and ongoing support
+
+Key Achievements:
+→ Developed nationally deployed healthcare management systems serving 1000+ practitioners
+→ Created fraud detection system protecting agricultural investments worth millions
+→ Built e-commerce platforms processing thousands of transactions monthly
+→ Implemented digital transformation strategies for 20+ organizations
+
+FEATURED PROJECTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Healthcare Digital Transformation (2020-2024)
+EHPCZ & AHPCZ Management Information Systems
+• Designed and developed comprehensive web-based management systems for Zimbabwe's healthcare regulatory bodies
+• Implemented features: practitioner registration, qualification verification, CPD tracking, payment processing
+• Technologies: Laravel, Vue.js, MySQL, RESTful APIs
+• Impact: Streamlined operations for 2 national healthcare councils, serving thousands of practitioners
+
+Wildlife Conservation Platform (2021-2023)
+Resource Africa - Wildlife Management System & Mobile App
+• Built integrated platform supporting sustainable natural resource management in rural communities
+• Developed both web portal and mobile application with offline capabilities
+• Technologies: PHP/Laravel backend, Vue.js frontend, Flutter mobile app
+• Impact: Empowered conservation efforts across Southern Africa
+
+Government Cybersecurity Initiative (2022)
+CyberSafe Ministry Mobile App - Ministry of ICT
+• Created mobile application for national cybersecurity awareness campaign
+• Developed backend monitoring system for real-time analytics and reporting
+• Technologies: React Native, Node.js, MongoDB
+• Impact: Enhanced cybersecurity awareness for thousands of citizens
+
+Financial Technology Platform (2021-2023)
+E-SHAGI Credit Management System
+• Developed comprehensive credit platform with web and mobile interfaces
+• Implemented secure payment processing and credit scoring algorithms
+• Technologies: Laravel, Vue.js, Mobile-responsive design
+• Impact: Provided accessible credit solutions to underserved communities
+
+Agricultural Technology Solution (2022)
+Sentinel Fraud Detection System
+• Built AI-powered fraud detection system for agricultural subsidy programs
+• Implemented real-time monitoring and anomaly detection algorithms
+• Technologies: PHP/Laravel, Machine Learning, Big Data Analytics
+• Impact: Protected government agricultural investments from fraud
+
+Enterprise Procurement Platform (2021-2022)
+ProcureEasy - Procurement Management System
+• Designed end-to-end procurement solution for enterprise clients
+• Features: requisition management, vendor portal, approval workflows, analytics
+• Technologies: Laravel, Vue.js, MySQL, RESTful APIs
+• Impact: Reduced procurement cycle time by 60% for client organizations
+
+EDUCATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+NATIONAL DIPLOMA IN INFORMATION TECHNOLOGY
+Kushinga Phikelela Polytechnic College | Zimbabwe
+• Specialized in Software Development and Database Management
+• Graduated with Distinction
+• Key Coursework: Programming, Database Design, Network Administration, System Analysis
+
+GCE ORDINARY LEVEL
+• Completed with strong performance in Mathematics and Sciences
+
+PROFESSIONAL DEVELOPMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Continuous learning through online platforms (Udemy, Coursera, Pluralsight)
+• Regular participation in tech conferences and webinars
+• Active contributor to open-source projects
+• Member of local tech communities and forums
+
+LEADERSHIP & ACHIEVEMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Successfully bootstrapped and scaled Leading Digital to profitability
+• Mentored 15+ junior developers in their career development
+• Speaker at local tech meetups on digital transformation
+• Contributed to Zimbabwe's digital economy growth through innovative solutions
+• Maintained 100% project delivery rate with zero security breaches
+
+LANGUAGES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• English (Fluent - Business Professional)
+• Shona (Native)
+
+INTERESTS & HOBBIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Chess Enthusiast (chess.com: sir-nigel)
+• Forex Trading and Financial Markets
+• Technology Innovation and Emerging Trends
+• Entrepreneurship and Business Development
+• Community Tech Education
+
+REFERENCES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Available upon request. Strong references from:
+• Government Ministry Officials
+• Healthcare Council Executives
+• International Business Partners
+• Technology Industry Leaders
