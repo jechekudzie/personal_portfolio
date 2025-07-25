@@ -38,14 +38,19 @@
         
         <div class="hero-image" data-aos="fade-left" data-aos-delay="600">
             <div class="image-container">
-                <div class="code-overlay">
-                    <div class="code-line"><span class="keyword">const</span> <span class="variable">digitalExpert</span> = {</div>
-                    <div class="code-line">  <span class="property">name</span>: <span class="string">'Kudzai Nigel Jeche'</span>,</div>
-                    <div class="code-line">  <span class="property">title</span>: <span class="string">'CEO & Lead Developer'</span>,</div>
-                    <div class="code-line">  <span class="property">company</span>: <span class="string">'Leading Digital'</span>,</div>
-                    <div class="code-line">  <span class="property">projects</span>: <span class="number">50</span>+,</div>
-                    <div class="code-line">  <span class="property">passion</span>: <span class="string">'Digital Transformation'</span></div>
-                    <div class="code-line">};</div>
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <img src="{{ asset('Profile.JPG') }}" alt="Kudzai Nigel Jeche - Full Stack Developer" />
+                    </div>
+                    <div class="code-overlay">
+                        <div class="code-line"><span class="keyword">const</span> <span class="variable">digitalExpert</span> = {</div>
+                        <div class="code-line">  <span class="property">name</span>: <span class="string">'Kudzai Nigel Jeche'</span>,</div>
+                        <div class="code-line">  <span class="property">title</span>: <span class="string">'CEO & Lead Developer'</span>,</div>
+                        <div class="code-line">  <span class="property">company</span>: <span class="string">'Leading Digital'</span>,</div>
+                        <div class="code-line">  <span class="property">projects</span>: <span class="number">50</span>+,</div>
+                        <div class="code-line">  <span class="property">passion</span>: <span class="string">'Digital Transformation'</span></div>
+                        <div class="code-line">};</div>
+                    </div>
                 </div>
             </div>
         </div>

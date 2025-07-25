@@ -435,6 +435,57 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-image {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(0, 212, 170, 0.3);
+    box-shadow: 0 0 30px rgba(0, 212, 170, 0.2);
+    transition: all var(--transition-normal);
+}
+
+.profile-image::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, #00d4aa, #3b82f6, #00d4aa);
+    z-index: -1;
+    animation: rotate 3s linear infinite;
+}
+
+.profile-image:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 212, 170, 0.4);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .code-overlay {
     font-family: var(--font-mono);
     font-size: 0.9rem;
@@ -551,6 +602,7 @@ body {
     gap: 4rem;
     align-items: start;
 }
+
 
 .about-intro h3 {
     font-size: 1.8rem;
@@ -1345,6 +1397,12 @@ body {
     .contact-content {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+    
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
     }
     
     .section-title {

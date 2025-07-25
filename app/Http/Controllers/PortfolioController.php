@@ -38,24 +38,32 @@ class PortfolioController extends Controller
         ]);
         
         try {
-            // Send email notification
-            // Uncomment when you have mail configured
-            // Mail::to('jechekudzie@gmail.com')->send(new ContactFormMail($validated));
+            // Send email notification to nigel@jeche.dev
+            Mail::to('nigel@jeche.dev')->send(new ContactFormMail($validated));
             
-            // For now, just log the contact
-            \Log::info('Contact form submission:', $validated);
+            // Also log the contact for backup
+            \Log::info('Contact form submission sent to nigel@jeche.dev:', $validated);
             
             return response()->json([
                 'success' => true,
                 'message' => 'Thank you for your message! I\'ll get back to you soon.'
             ]);
         } catch (\Exception $e) {
-            \Log::error('Contact form error: ' . $e->getMessage());
+            // Log the error and the contact details for manual follow-up
+            \Log::error('Contact form email failed: ' . $e->getMessage());
+            \Log::info('IMPORTANT - Manual follow-up required for contact form submission:', [
+                'contact_data' => $validated,
+                'timestamp' => now(),
+                'error' => $e->getMessage(),
+                'follow_up_required' => true
+            ]);
             
+            // Still show success to user but log for manual processing
             return response()->json([
-                'success' => false,
-                'message' => 'Sorry, there was an error sending your message. Please try again.'
-            ], 500);
+                'success' => true,
+                'message' => 'Thank you for your message! I\'ll get back to you soon.',
+                'note' => 'Message logged for manual processing'
+            ]);
         }
     }
     
