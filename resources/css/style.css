@@ -86,6 +86,24 @@ body {
 #loading-screen.hidden {
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
+}
+
+/* Additional fallback for loading screen */
+#loading-screen {
+    animation: autoHide 4s forwards;
+}
+
+@keyframes autoHide {
+    0%, 75% { 
+        opacity: 1; 
+        visibility: visible; 
+    }
+    100% { 
+        opacity: 0; 
+        visibility: hidden; 
+        pointer-events: none;
+    }
 }
 
 .loader {

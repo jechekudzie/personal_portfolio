@@ -6,21 +6,37 @@ const navMenu = document.getElementById('nav-menu');
 const loadingScreen = document.getElementById('loading-screen');
 
 // ===== LOADING SCREEN =====
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        loadingScreen.classList.add('hidden');
+function hideLoadingScreen() {
+    const loadingScreenElement = document.getElementById('loading-screen');
+    if (loadingScreenElement) {
+        loadingScreenElement.classList.add('hidden');
         
         // Initialize AOS after loading
         setTimeout(() => {
-            AOS.init({
-                duration: 1000,
-                easing: 'ease-out-cubic',
-                once: true,
-                offset: 100
-            });
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 1000,
+                    easing: 'ease-out-cubic',
+                    once: true,
+                    offset: 100
+                });
+            }
         }, 500);
-    }, 2000);
+    }
+}
+
+// Hide loading screen when page loads
+window.addEventListener('load', () => {
+    setTimeout(hideLoadingScreen, 1500);
 });
+
+// Fallback: Hide loading screen after DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(hideLoadingScreen, 2000);
+});
+
+// Ultimate fallback: Hide loading screen after a maximum time
+setTimeout(hideLoadingScreen, 3000);
 
 // ===== NAVIGATION FUNCTIONALITY =====
 // Mobile menu toggle
