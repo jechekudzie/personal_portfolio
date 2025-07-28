@@ -17,8 +17,10 @@
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/portfolio.css">
+    <!-- Vite Assets -->
+    <script type="module" src="http://localhost:5173/@vite/client"></script>
+    <script type="module" src="http://localhost:5173/resources/css/app.css"></script>
+    <script type="module" src="http://localhost:5173/resources/js/app.js"></script>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -48,6 +50,7 @@
                     <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
                     <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
                     <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li class="nav-item"><a href="#highlights" class="nav-link">Highlights</a></li>
                     <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </div>
@@ -101,13 +104,18 @@
             
             <div class="hero-image" data-aos="fade-left" data-aos-delay="600">
                 <div class="image-container">
-                    <div class="code-overlay">
-                        <div class="code-line"><span class="keyword">const</span> <span class="variable">developer</span> = {</div>
-                        <div class="code-line">  <span class="property">name</span>: <span class="string">'Kudzai Nigel'</span>,</div>
-                        <div class="code-line">  <span class="property">skills</span>: [<span class="string">'Laravel'</span>, <span class="string">'Vue.js'</span>],</div>
-                        <div class="code-line">  <span class="property">experience</span>: <span class="number">7</span>,</div>
-                        <div class="code-line">  <span class="property">passion</span>: <span class="string">'Innovation'</span></div>
-                        <div class="code-line">};</div>
+                    <div class="profile-section">
+                        <div class="profile-image">
+                            <img src="Profile.JPG" alt="Kudzai Nigel Jeche - Full Stack Developer" loading="lazy">
+                        </div>
+                        <div class="code-overlay">
+                            <div class="code-line"><span class="keyword">const</span> <span class="variable">developer</span> = {</div>
+                            <div class="code-line">  <span class="property">name</span>: <span class="string">'Kudzai Nigel'</span>,</div>
+                            <div class="code-line">  <span class="property">skills</span>: [<span class="string">'Laravel'</span>, <span class="string">'Vue.js'</span>],</div>
+                            <div class="code-line">  <span class="property">experience</span>: <span class="number">7</span>,</div>
+                            <div class="code-line">  <span class="property">passion</span>: <span class="string">'Innovation'</span></div>
+                            <div class="code-line">};</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -283,6 +291,7 @@
                 <button class="filter-btn" data-filter="healthcare">Healthcare</button>
                 <button class="filter-btn" data-filter="government">Government</button>
                 <button class="filter-btn" data-filter="fintech">FinTech</button>
+                <button class="filter-btn" data-filter="conservation">Conservation</button>
                 <button class="filter-btn" data-filter="education">Education</button>
             </div>
             
@@ -371,7 +380,7 @@
                     </div>
                 </div>
                 
-                <div class="portfolio-item healthcare" data-aos="fade-up" data-aos-delay="400">
+                <div class="portfolio-item conservation" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-card">
                         <div class="project-image">
                             <div class="project-overlay">
@@ -452,6 +461,238 @@
                                 <span>Real-time Monitoring</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Website Highlights Section -->
+    <section id="highlights" class="highlights section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">My digital footprint</span>
+                <h2 class="section-title">Website Highlights</h2>
+            </div>
+            
+            <div class="highlights-grid">
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="highlight-header">
+                        <div class="highlight-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="highlight-category">
+                            <span class="category-tag category-corporate">Corporate</span>
+                        </div>
+                    </div>
+                    <h3>Leading Digital</h3>
+                    <p>Corporate website showcasing digital transformation services</p>
+                    <div class="highlight-url">
+                        <span class="url-text">https://leadingdigital.africa</span>
+                    </div>
+                    <div class="highlight-actions">
+                        <a href="https://leadingdigital.africa" target="_blank" class="btn btn-outline">
+                            <span>Visit Site</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="highlight-header">
+                        <div class="highlight-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="highlight-category">
+                            <span class="category-tag category-business">Business</span>
+                        </div>
+                    </div>
+                    <h3>Rockbolt International</h3>
+                    <p>International business solutions platform</p>
+                    <div class="highlight-url">
+                        <span class="url-text">https://rockboltint.com</span>
+                    </div>
+                    <div class="highlight-actions">
+                        <a href="https://rockboltint.com" target="_blank" class="btn btn-outline">
+                            <span>Visit Site</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="highlight-header">
+                        <div class="highlight-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="highlight-category">
+                            <span class="category-tag category-energy">Energy</span>
+                        </div>
+                    </div>
+                    <h3>Lummii Energy</h3>
+                    <p>Energy sector digital solutions</p>
+                    <div class="highlight-url">
+                        <span class="url-text">https://upgrade.lummii.energy</span>
+                    </div>
+                    <div class="highlight-actions">
+                        <a href="https://upgrade.lummii.energy" target="_blank" class="btn btn-outline">
+                            <span>Visit Site</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="highlight-header">
+                        <div class="highlight-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="highlight-category">
+                            <span class="category-tag category-ecommerce">E-commerce</span>
+                        </div>
+                    </div>
+                    <h3>One Minute Chemical</h3>
+                    <p>Chemical industry e-commerce platform</p>
+                    <div class="highlight-url">
+                        <span class="url-text">https://oneminutechemical.co.zw</span>
+                    </div>
+                    <div class="highlight-actions">
+                        <a href="https://oneminutechemical.co.zw" target="_blank" class="btn btn-outline">
+                            <span>Visit Site</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="highlight-header">
+                        <div class="highlight-icon">
+                            <i class="fas fa-pills"></i>
+                        </div>
+                        <div class="highlight-category">
+                            <span class="category-tag category-healthcare">Healthcare</span>
+                        </div>
+                    </div>
+                    <h3>One Minute Pharm</h3>
+                    <p>Pharmaceutical e-commerce solution</p>
+                    <div class="highlight-url">
+                        <span class="url-text">https://oneminutepharm.com</span>
+                    </div>
+                    <div class="highlight-actions">
+                        <a href="https://oneminutepharm.com" target="_blank" class="btn btn-outline">
+                            <span>Visit Site</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="highlight-header">
+                        <div class="highlight-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="highlight-category">
+                            <span class="category-tag category-corporate">Corporate</span>
+                        </div>
+                    </div>
+                    <h3>Pantera Group</h3>
+                    <p>Corporate group portfolio website</p>
+                    <div class="highlight-url">
+                        <span class="url-text">https://pantera-group.netlify.app</span>
+                    </div>
+                    <div class="highlight-actions">
+                        <a href="https://pantera-group.netlify.app" target="_blank" class="btn btn-outline">
+                            <span>Visit Site</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="highlight-header">
+                        <div class="highlight-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="highlight-category">
+                            <span class="category-tag category-business">Business</span>
+                        </div>
+                    </div>
+                    <h3>Dynamic Floors</h3>
+                    <p>Flooring solutions business website</p>
+                    <div class="highlight-url">
+                        <span class="url-text">https://dynamicfloors.co.zw</span>
+                    </div>
+                    <div class="highlight-actions">
+                        <a href="https://dynamicfloors.co.zw" target="_blank" class="btn btn-outline">
+                            <span>Visit Site</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="highlight-header">
+                        <div class="highlight-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="highlight-category">
+                            <span class="category-tag category-business">Business</span>
+                        </div>
+                    </div>
+                    <h3>Felymas</h3>
+                    <p>Business services platform</p>
+                    <div class="highlight-url">
+                        <span class="url-text">https://felymas.com</span>
+                    </div>
+                    <div class="highlight-actions">
+                        <a href="https://felymas.com" target="_blank" class="btn btn-outline">
+                            <span>Visit Site</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="900">
+                    <div class="highlight-header">
+                        <div class="highlight-icon">
+                            <i class="fas fa-shopping-bag"></i>
+                        </div>
+                        <div class="highlight-category">
+                            <span class="category-tag category-ecommerce">E-commerce</span>
+                        </div>
+                    </div>
+                    <h3>Alex Classics</h3>
+                    <p>Classic products e-commerce site</p>
+                    <div class="highlight-url">
+                        <span class="url-text">https://alexclassics.co.zw</span>
+                    </div>
+                    <div class="highlight-actions">
+                        <a href="https://alexclassics.co.zw" target="_blank" class="btn btn-outline">
+                            <span>Visit Site</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="highlight-card" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="highlight-header">
+                        <div class="highlight-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="highlight-category">
+                            <span class="category-tag category-healthcare">Healthcare</span>
+                        </div>
+                    </div>
+                    <h3>Orange Health</h3>
+                    <p>Healthcare services platform</p>
+                    <div class="highlight-url">
+                        <span class="url-text">https://orangehealth.co.zw</span>
+                    </div>
+                    <div class="highlight-actions">
+                        <a href="https://orangehealth.co.zw" target="_blank" class="btn btn-outline">
+                            <span>Visit Site</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -582,6 +823,6 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/portfolio.js"></script>
+    <script src="../assets/js/script.js"></script>
 </body>
 </html>
