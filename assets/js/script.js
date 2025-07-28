@@ -1,57 +1,107 @@
 // ===== GLOBAL VARIABLES =====
 let lastScrollTop = 0;
-const navbar = document.getElementById('navbar');
-const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.getElementById('nav-menu');
-const loadingScreen = document.getElementById('loading-screen');
+
+// Initialize elements safely
+function initializeElements() {
+    return {
+        navbar: document.getElementById('navbar'),
+        navToggle: document.getElementById('nav-toggle'),
+        navMenu: document.getElementById('nav-menu'),
+        loadingScreen: document.getElementById('loading-screen')
+    };
+}
+
+// Get elements when DOM is ready
+let elements = {};
+document.addEventListener('DOMContentLoaded', () => {
+    elements = initializeElements();
+});
 
 // ===== LOADING SCREEN =====
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        loadingScreen.classList.add('hidden');
+function hideLoadingScreen() {
+    const loadingScreenElement = document.getElementById('loading-screen');
+    if (loadingScreenElement) {
+        loadingScreenElement.classList.add('hidden');
         
         // Initialize AOS after loading
         setTimeout(() => {
-            AOS.init({
-                duration: 1000,
-                easing: 'ease-out-cubic',
-                once: true,
-                offset: 100
-            });
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 1000,
+                    easing: 'ease-out-cubic',
+                    once: true,
+                    offset: 100
+                });
+            }
         }, 500);
-    }, 2000);
+    }
+}
+
+// Hide loading screen when page loads
+window.addEventListener('load', () => {
+    setTimeout(hideLoadingScreen, 1500);
 });
+
+// Fallback: Hide loading screen after DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(hideLoadingScreen, 2000);
+});
+
+// Ultimate fallback: Hide loading screen after a maximum time
+setTimeout(hideLoadingScreen, 3000);
 
 // ===== NAVIGATION FUNCTIONALITY =====
-// Mobile menu toggle
-navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navMenu.classList.toggle('active');
-    document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
-});
-
-// Close mobile menu when clicking nav links
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-        document.body.style.overflow = 'auto';
+function initializeNavigation() {
+    const navbar = document.getElementById('navbar');
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (!navbar || !navToggle || !navMenu) return;
+    
+    // Mobile menu toggle
+    navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
     });
-});
 
-// Navbar scroll effect
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // Add/remove scrolled class
-    if (scrollTop > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-    
-    lastScrollTop = scrollTop;
-});
+    // Close mobile menu when clicking nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && 
+            !navToggle.contains(e.target)) {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Add/remove scrolled class
+        if (scrollTop > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+}
+
+// Initialize navigation when DOM is ready
+document.addEventListener('DOMContentLoaded', initializeNavigation);
 
 // ===== ACTIVE NAVIGATION LINK =====
 const sections = document.querySelectorAll('section');
@@ -80,49 +130,56 @@ function updateActiveNavLink() {
 window.addEventListener('scroll', updateActiveNavLink);
 
 // ===== TYPEWRITER EFFECT =====
-const typewriterElement = document.getElementById('typewriter');
-const texts = [
-    'Full Stack Developer',
-    'Digital Consultant',
-    'Tech Entrepreneur',
-    'Innovation Leader',
-    'Laravel Expert',
-    'Vue.js Specialist'
-];
+function initializeTypewriter() {
+    const typewriterElement = document.getElementById('typewriter');
+    if (!typewriterElement) return;
+    
+    const texts = [
+        'Full Stack Developer',
+        'Digital Consultant',
+        'Tech Entrepreneur',
+        'Innovation Leader',
+        'Laravel Expert',
+        'Vue.js Specialist'
+    ];
 
-let textIndex = 0;
-let charIndex = 0;
-let isDeleting = false;
-let typingSpeed = 100;
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100;
 
-function typeWriter() {
-    const currentText = texts[textIndex];
-    
-    if (isDeleting) {
-        typewriterElement.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
-        typingSpeed = 50;
-    } else {
-        typewriterElement.textContent = currentText.substring(0, charIndex + 1);
-        charIndex++;
-        typingSpeed = 100;
+    function typeWriter() {
+        const currentText = texts[textIndex];
+        
+        if (isDeleting) {
+            typewriterElement.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 50;
+        } else {
+            typewriterElement.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 100;
+        }
+        
+        if (!isDeleting && charIndex === currentText.length) {
+            setTimeout(() => {
+                isDeleting = true;
+            }, 2000);
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+        }
+        
+        setTimeout(typeWriter, typingSpeed);
     }
-    
-    if (!isDeleting && charIndex === currentText.length) {
-        setTimeout(() => {
-            isDeleting = true;
-        }, 2000);
-    } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % texts.length;
-    }
-    
-    setTimeout(typeWriter, typingSpeed);
+
+    // Start typewriter effect
+    setTimeout(typeWriter, 3000);
 }
 
-// Start typewriter effect after loading
-window.addEventListener('load', () => {
-    setTimeout(typeWriter, 3000);
+// Initialize typewriter when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(initializeTypewriter, 1000);
 });
 
 // ===== PORTFOLIO FILTER =====

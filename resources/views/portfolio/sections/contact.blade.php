@@ -59,25 +59,51 @@
             </div>
             
             <div class="contact-form" data-aos="fade-left">
-                <form id="contact-form" class="form" action="{{ route('portfolio.contact') }}" method="POST">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle"></i>
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if(session('error'))
+                    <div class="alert alert-error">
+                        <i class="fas fa-exclamation-circle"></i>
+                        {{ session('error') }}
+                    </div>
+                @endif
+
+                @if($errors->any())
+                    <div class="alert alert-error">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Please fix the following errors:
+                        <ul>
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form class="form" action="{{ route('portfolio.contact') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" value="{{ old('name') }}" placeholder=" " required>
                         <label for="name">Your Name</label>
                     </div>
                     
                     <div class="form-group">
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" value="{{ old('email') }}" placeholder=" " required>
                         <label for="email">Your Email</label>
                     </div>
                     
                     <div class="form-group">
-                        <input type="text" id="subject" name="subject" required>
+                        <input type="text" id="subject" name="subject" value="{{ old('subject') }}" placeholder=" " required>
                         <label for="subject">Subject</label>
                     </div>
                     
                     <div class="form-group">
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder=" " required>{{ old('message') }}</textarea>
                         <label for="message">Your Message</label>
                     </div>
                     

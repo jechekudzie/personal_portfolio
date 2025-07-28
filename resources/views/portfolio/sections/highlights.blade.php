@@ -2,8 +2,8 @@
     <div class="container">
         <div class="section-header" data-aos="fade-up">
             <span class="section-subtitle">Website Highlights</span>
-            <h2 class="section-title">Live Websites We've Built</h2>
-            <p>A showcase of live websites and applications that demonstrate our expertise across various industries and technologies.</p>
+            <h2 class="section-title">Live Websites I've Built</h2>
+            <p>A showcase of live websites and applications that demonstrate my expertise across various industries and technologies.</p>
         </div>
         
         <div class="highlights-grid">

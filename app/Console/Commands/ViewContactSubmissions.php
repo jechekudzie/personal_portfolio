@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class ViewContactSubmissions extends Command
 {
@@ -12,7 +12,7 @@ class ViewContactSubmissions extends Command
      *
      * @var string
      */
-    protected $signature = 'contacts:view {--recent=10 : Number of recent submissions to show}';
+    protected $signature = 'contacts:view {--recent : Show only recent submissions (last 10)} {--follow : Follow the log file for real-time updates}';
 
     /**
      * The console command description.
@@ -26,104 +26,115 @@ class ViewContactSubmissions extends Command
      */
     public function handle()
     {
-        $recent = $this->option('recent');
-        $logPath = storage_path('logs');
+        $logFile = storage_path('logs/contact-form.log');
         
+        if (!File::exists($logFile)) {
+            $this->error('No contact form log file found.');
+            return 1;
+        }
+
         $this->info('🔍 Contact Form Submissions');
         $this->line('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-        $this->newLine();
-        
-        // Get all log files
-        $logFiles = glob($logPath . '/laravel-*.log');
-        
-        if (empty($logFiles)) {
-            $this->warn('No log files found.');
-            return 0;
+
+        if ($this->option('follow')) {
+            $this->followLog($logFile);
+        } else {
+            $this->displayLogs($logFile);
         }
-        
-        // Sort by modification time (newest first)
-        usort($logFiles, function($a, $b) {
-            return filemtime($b) - filemtime($a);
-        });
-        
+
+        return 0;
+    }
+
+    private function displayLogs($logFile)
+    {
+        $lines = File::lines($logFile);
         $submissions = [];
         
-        foreach ($logFiles as $logFile) {
-            $content = file_get_contents($logFile);
-            
-            // Look for contact form submissions
-            $pattern = '/\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\].*?Contact form submission.*?({.*?})\s*$/m';
-            
-            if (preg_match_all($pattern, $content, $matches, PREG_SET_ORDER)) {
-                foreach ($matches as $match) {
-                    $timestamp = $match[1];
-                    $data = json_decode($match[2], true);
-                    
-                    if ($data) {
-                        $submissions[] = [
-                            'timestamp' => $timestamp,
-                            'data' => $data,
-                            'file' => basename($logFile)
-                        ];
-                    }
-                }
+        foreach ($lines as $line) {
+            $data = json_decode(trim($line), true);
+            if ($data) {
+                $submissions[] = $data;
             }
+        }
+
+        if (empty($submissions)) {
+            $this->warn('No submissions found.');
+            return;
+        }
+
+        // Sort by timestamp (newest first)
+        usort($submissions, function($a, $b) {
+            return strtotime($b['timestamp'] ?? '') - strtotime($a['timestamp'] ?? '');
+        });
+
+        if ($this->option('recent')) {
+            $submissions = array_slice($submissions, 0, 10);
+        }
+
+        foreach ($submissions as $submission) {
+            $this->displaySubmission($submission);
+            $this->line('');
+        }
+    }
+
+    private function displaySubmission($submission)
+    {
+        if (isset($submission['error'])) {
+            $this->error('❌ Email Error: ' . $submission['error']);
+            $this->line('   Message: ' . $submission['message']);
+            if (isset($submission['contact_data'])) {
+                $this->displayContactData($submission['contact_data']);
+            }
+            return;
+        }
+
+        $this->displayContactData($submission);
+    }
+
+    private function displayContactData($data)
+    {
+        $this->line('📅 <fg=yellow>' . ($data['timestamp'] ?? 'Unknown') . '</>');
+        $this->line('👤 <fg=green>Name:</> ' . ($data['name'] ?? 'N/A'));
+        $this->line('📧 <fg=blue>Email:</> ' . ($data['email'] ?? 'N/A'));
+        $this->line('📋 <fg=magenta>Subject:</> ' . ($data['subject'] ?? 'N/A'));
+        $this->line('💬 <fg=cyan>Message:</>');
+        $this->line('   ' . wordwrap($data['message'] ?? 'N/A', 60, "\n   "));
+        
+        if (isset($data['ip'])) {
+            $this->line('🌐 <fg=gray>IP:</> ' . $data['ip']);
+        }
+    }
+
+    private function followLog($logFile)
+    {
+        $this->info('Following contact form log file... (Press Ctrl+C to stop)');
+        $this->line('');
+
+        $lastSize = File::size($logFile);
+        
+        while (true) {
+            clearstatcache();
+            $currentSize = File::size($logFile);
             
-            // Also look for manual follow-up entries
-            $followUpPattern = '/\[(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\].*?IMPORTANT - Manual follow-up required.*?contact_data.*?({.*?})\s*$/m';
-            
-            if (preg_match_all($followUpPattern, $content, $matches, PREG_SET_ORDER)) {
-                foreach ($matches as $match) {
-                    $timestamp = $match[1];
-                    $jsonData = $match[2];
-                    
-                    // Extract the contact_data from the JSON
-                    if (preg_match('/"contact_data":\s*({[^}]+})/', $jsonData, $contactMatch)) {
-                        $data = json_decode($contactMatch[1], true);
-                        
+            if ($currentSize > $lastSize) {
+                $newContent = File::get($logFile);
+                $newLines = array_slice(explode("\n", $newContent), -1);
+                
+                foreach ($newLines as $line) {
+                    if (trim($line)) {
+                        $data = json_decode(trim($line), true);
                         if ($data) {
-                            $submissions[] = [
-                                'timestamp' => $timestamp,
-                                'data' => $data,
-                                'file' => basename($logFile),
-                                'requires_followup' => true
-                            ];
+                            $this->line('🆕 <fg=green>NEW SUBMISSION:</>');
+                            $this->displaySubmission($data);
+                            $this->line('');
                         }
                     }
                 }
+                
+                $lastSize = $currentSize;
             }
-        }
-        
-        // Sort by timestamp (newest first)
-        usort($submissions, function($a, $b) {
-            return strtotime($b['timestamp']) - strtotime($a['timestamp']);
-        });
-        
-        // Limit results
-        $submissions = array_slice($submissions, 0, $recent);
-        
-        if (empty($submissions)) {
-            $this->warn('No contact form submissions found in logs.');
-            return 0;
-        }
-        
-        $this->info("Showing {$recent} most recent submissions:");
-        $this->newLine();
-        
-        foreach ($submissions as $index => $submission) {
-            $data = $submission['data'];
-            $followUp = isset($submission['requires_followup']) ? '⚠️  NEEDS FOLLOW-UP' : '✅ Processed';
             
-            $this->line("📧 Submission #" . ($index + 1) . " - {$followUp}");
-            $this->line("📅 Date: {$submission['timestamp']}");
-            $this->line("👤 Name: {$data['name']}");
-            $this->line("📧 Email: {$data['email']}");
-            $this->line("📋 Subject: {$data['subject']}");
-            $this->line("💬 Message: " . substr($data['message'], 0, 100) . (strlen($data['message']) > 100 ? '...' : ''));
-            $this->line("📄 Log: {$submission['file']}");
-            $this->newLine();
+            sleep(1);
         }
-        
-        return 0;
     }
 }
