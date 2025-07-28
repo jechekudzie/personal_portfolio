@@ -89,10 +89,16 @@ body {
     pointer-events: none;
 }
 
-/* Additional fallback for loading screen */
+/* Emergency fix: Hide loading screen immediately */
 #loading-screen {
-    animation: autoHide 4s forwards;
+    display: none !important;
 }
+
+/* Alternative: If you want to keep the animation, uncomment this instead:
+#loading-screen {
+    animation: autoHide 2s forwards;
+}
+*/
 
 @keyframes autoHide {
     0%, 75% { 
